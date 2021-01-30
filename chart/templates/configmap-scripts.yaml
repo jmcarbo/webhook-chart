@@ -4,4 +4,4 @@ metadata:
   name: {{include "chart.fullname" .}}-scripts
   labels: {{- include "chart.labels" . | nindent 4}}
 data:
-{{ .Values.scripts | indent 4 }}
+  {{ toYaml .Values.scripts | indent 2 }}
