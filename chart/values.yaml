@@ -78,4 +78,6 @@ tolerations: []
 
 affinity: {}
 
-config:
+config: ""
+
+scripts: {}

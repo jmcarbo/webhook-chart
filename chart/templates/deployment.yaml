@@ -50,10 +50,15 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
+            - name: scripts
+              mountPath: /scripts
       volumes:
         - name: config
           configMap:
             name: {{include "chart.fullname" .}}
+        - name: scripts
+          configMap:
+            name: {{include "chart.fullname" .}}-scripts
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
